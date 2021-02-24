@@ -246,7 +246,7 @@ svg {
 
 .EventTicker-Group-Animating-60 {
     animation-name: ticker;
-    animation-iteration-count: 1;
+    animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-duration: 60s;
 }
