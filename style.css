@@ -1,0 +1,307 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+    line-height: 1.15;
+}
+
+body {
+    margin: 0;
+    font-family: "Open Sans","Helvetica Neue",sans-serif;
+    background-color: #000;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+header {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.Main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    padding: 0 calc(50% - 512px);
+}
+
+.Header-Links {
+    display: flex;
+}
+
+.Header-Logo {
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    font-size: 60px;
+    font-family: "Lora", "Courier New", monospace, serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    align-items: flex-end;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    line-height: 1.2;
+}
+
+.Header-Logo-Era {
+    font-size: 20px;
+    width: 100%;
+    left: 16px;
+    margin-top: -10px;
+}
+
+.Header-Logo-Era, .Header-Logo-SubEra {
+    font-family: "Lora", "Courier New", monospace, serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.Header-Logo-SubEra {
+    font-size: 16px;
+    left: 32px;
+}
+
+.Header-Logo-Tag {
+    margin: 10px;
+    padding: 5px;
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    background-color: hsla(0 ,0%, 39.6%, .65098);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 3px;
+}
+
+.Header-Social {
+    display: flex;
+    margin-left: auto;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+
+.Header-Social-Faq {
+    margin-right: 10px;
+    font-size: 12px;
+    align-items: center;
+    line-height: 14px;
+    color: #aaa;
+}
+
+.Header-Social-Faq-Inner {
+    margin: auto;
+    text-align: center;
+    padding: 10px 8px 9px;
+    background: #1f1f1f;
+}
+
+.Header-Social-Faq-Icon {
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+.Header-Social-Faq-Icon:hover {
+    color: #fff;
+}
+
+.Header-Social-Patreon {
+    font-size: 12px;
+    margin-right: 20px;
+}
+
+.Header-Social-Patreon-Inner {
+    margin: auto;
+    text-align: center;
+    padding: 8px 10px;
+    background: #1f1f1f;
+}
+
+.Header-Social-Patreon-Icon {
+    font-size: 14px;
+    font-weight: 700;
+    color: #aaa;
+    text-align: center;
+}
+
+.Header-Social-Patreon-Icon:hover {
+    color: #fff;
+}
+
+.Header-Social-Follow {
+    display: flex;
+    flex-direction: column;
+    font-size: 0;
+    align-items: center;
+    line-height: 14px;
+    color: #aaa;
+}
+
+.Header-Social-Follow-Inner {
+    width: 110px;
+    text-align: center;
+    padding: 15px 0 5px;
+    background: #1f1f1f;
+}
+
+.Header-Social-Follow-Icon {
+    font-size: 0;
+    margin: 0 5px;
+}
+
+.Header-Social-Follow-Icon:hover {
+    color: #fff;
+}
+
+.Header-Social-Follow-Icon > svg {
+    font-size: 24px;
+}
+
+.Header-Social-Follow-Triangle {
+    width: 0;
+    height: 0;
+    border-left: 55px solid transparent;
+    border-right: 55px solid transparent;
+    border-top: 24px solid #1f1f1f;
+}
+
+.EventTicker-Display {
+    width: calc(100% - 40px);
+    height: 30px;
+    margin: 0 15px 15px;
+    line-height: 30px;
+    overflow: hidden;
+    background: rgba(30, 30, 30, .64);
+    border-radius: 4px;
+}
+
+.EventTicker-News {
+    width: 60px;
+    padding: 0 5px;
+    position: absolute;
+    background: red;
+    border-radius: 5px;
+    color: #000;
+    font-size: 14px;
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    display: none;
+}
+
+.EventTicker-Scroll {
+    box-sizing: content-box;
+    padding-left: 100%;
+    padding-top: 2px;
+    line-height: 22px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.EventTicker-Group {
+    display: inline-block;
+    padding-right: 100%;
+    box-sizing: content-box;
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateZ(0);
+    }
+
+    to {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+.EventTicker-Group-Animating-60 {
+    animation-name: ticker;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-duration: 60s;
+}
+
+.EventTicker-Item {
+    display: inline-block;
+    background: rgba(30, 30, 30, .64);
+    border-radius: 4px;
+    padding: 2px 5px;
+    color: #fff;
+}
+
+.EventTicker-Item:not(:first-child) {
+    margin-left: 100px;
+}
+
+.EventTicker-Item:not(:last-child) {
+    margin-right: 100px;
+}
+
+.Main-Body {
+    flex-grow: 1;
+    justify-content: left;
+    align-items: start;
+    color: #fff;
+    margin-top: 40px;
+}
+
+.BigDeal-All {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    height: 50vh;
+}
+
+.BigDeal-Body {
+    max-width: 550px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.BigDeal-RedLine {
+    font-size: 32px;
+    font-family: "Lora", "Courier New", monospace, serif;
+    font-weight: 700;
+    margin: 0 20px;
+}
+
+.BigDeal-RedLine-None {
+    color: #fff;
+    font-style: italic;
+}
+
